@@ -1,0 +1,74 @@
+:root {
+    --color-brand-primary: #12304A;
+
+    --color-background-primary: #F8F0E3;
+    --color-background-secondary: #EDE4D8;
+    --color-background-tertiary: #DDD1C3; 
+
+    --color-text-primary: #1B0405;
+    --color-text-secondary: #483331;
+
+    --padding-side: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    background-color: var(--color-background-primary);
+}
+
+section {
+    width: 100%;
+}
+
+.side-padding {
+    padding-left: var(--padding-side);
+    padding-right: var(--padding-side);
+}
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+    margin-bottom: 96px;
+}
+
+.hero-card {
+    width: 100%;
+    height: 100%;
+    padding: 
+        var(--nav-height) 
+        var(--padding-side)
+        var(--padding-side);
+}
+
+.hero-card img {
+    border-radius: 30px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center 10%;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 160px;
+}
+
+.about h1 {
+    margin-bottom: 96px;
+    text-align: center;
+}
+
+.about p {
+    max-width: 956px;
+    text-align: center;
+}

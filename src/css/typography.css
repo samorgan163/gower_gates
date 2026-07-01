@@ -1,0 +1,41 @@
+body {
+    font-family: 'Afacad', serif;
+}
+
+.company-title {
+    font-size: clamp(3rem, 5vw, 6rem); /* 96px */
+    font-weight: bold;
+    line-height: 1.1;
+    color: #0E202A;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem); /* 40px -> 64px */
+    font-weight: bold;
+    line-height: 1.2;
+    color: var(--color-text-primary);
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.2;
+    color: var(--color-text-primary);
+}
+
+p {
+    font-size: clamp(1.25rem, 2vw, 1.5rem); /* 24px */
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 4%;
+    color: var(--color-text-secondary);
+}
+
+.title-head {
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1;
+    color: #696969;
+    margin-bottom: 8px;
+}
