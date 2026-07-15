@@ -1,0 +1,135 @@
+.product-container {
+    padding-top: calc(var(--nav-height) + 64px);
+}
+
+/* Gallery */
+.product-gallery {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: var(--padding-side);
+}
+
+.product-gallery img {
+    width: 100%;
+    aspect-ratio: 4/3;
+
+    object-fit: cover;
+    object-position: center;
+    display: block;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+    .product-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 1228px) {
+    .product-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .product-gallery {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 64px;
+        padding: 0 104px;
+    }
+}
+
+/* Carousel */
+.product-carousel {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+    background: rgba(28, 28, 28, 0.9);
+
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transition: opacity 1s ease;
+}
+
+.product-carousel.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.product-carousel .slide {
+    flex: 0 0 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    scroll-snap-align: center;
+}
+
+.product-carousel .slide img {
+    width: 90%;
+    height: 90%;
+
+    object-fit: contain;
+}
+
+.product-carousel-btn {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.25);
+    border: none;
+
+    cursor: pointer;
+}
+
+.product-carousel-btn:hover {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.product-carousel-btn:active {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.product-carousel-btn svg {
+    width: 24px;
+    height: 24px;
+    color: white;
+}
+
+#product-carousel-btn-left {
+    left: 64px;
+}
+
+#product-carousel-btn-right {
+    right: 64px;
+}
+
+#product-carousel-btn-close {
+    top: 64px;
+    right: 64px;
+}

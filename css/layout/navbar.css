@@ -1,0 +1,255 @@
+:root {
+    --nav-height: 104px;
+
+    --nav-padding-inline: 32px;
+    --nav-padding-block: 22px;
+
+    --nav-icon-size: 60px;
+}
+
+/* ==========================
+   Navigation
+========================== */
+
+.nav {
+    position: fixed;
+    inset: 0 0 auto 0;
+
+    display: flex;
+    justify-content: /*space-between*/ flex-end;
+    align-items: center;
+
+    padding: var(--nav-padding-block) 16px;
+
+    z-index: 1000;
+}
+
+/* ==========================
+   Logo
+========================== */
+
+.nav-logo {
+    width: 72px;
+    height: 60px;
+
+    display: grid;
+    place-items: center;
+
+    background: var(--color-background-secondary);
+
+    border-radius: 20px;
+
+    text-decoration: none;
+    z-index: 999;
+}
+
+.nav-logo svg {
+    height: 24px;
+    width: auto;
+    fill: black;
+}
+
+/* ==========================
+   Menu Button
+========================== */
+
+.menu-btn {
+
+    width: var(--nav-icon-size);
+    height: var(--nav-icon-size);
+
+    display: grid;
+    place-items: center;
+
+    border: none;
+    border-radius: 20px;
+
+    background: var(--color-background-secondary);
+
+    color: var(--color-text-primary);
+
+    cursor: pointer;
+
+    z-index: 1000;
+
+}
+
+.menu-icon {
+    pointer-events: none;
+    width: 20px;
+    height: 10px;
+    fill: var(--color-text-primary);
+}
+
+/* ==========================
+   Mobile Menu
+========================== */
+
+.nav-menu {
+    position: fixed;
+
+    inset: 0;
+
+    padding:
+        var(--nav-height)
+        var(--padding-side)
+        var(--padding-side);
+
+    background: var(--color-background-primary);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(-20px);
+
+    transition:
+        opacity .3s ease,
+        transform .3s ease,
+        visibility .3s ease;
+}
+
+.nav-menu.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: translateY(0);
+}
+
+/* ==========================
+   Links
+========================== */
+
+.nav-links {
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 24px;
+
+    padding: 32px;
+
+    border-radius: 20px;
+
+    background: var(--color-background-secondary);
+}
+
+.nav-links a {
+    color: var(--color-text-primary);
+
+    text-decoration: none;
+
+    font-size: 32px;
+    font-weight: 600;
+
+    transition: color .2s;
+}
+
+.nav-links a:hover {
+    color: var(--color-brand-primary);
+}
+
+.nav-links a.active {
+    color: var(--color-brand-primary);
+}
+
+/* ==========================
+   Quote Button
+========================== */
+
+.btn-primary {
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 60px;
+
+    padding: 0 32px;
+
+    border-radius: 30px;
+
+    background: var(--color-brand-primary);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    transition: background-color .25s;
+
+    flex-shrink: 0;
+
+}
+
+.btn-primary:hover {
+    background-color: #0a263f;
+}
+
+/* to disable scroll on menu open */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* ==========================
+   Desktop
+========================== */
+
+@media (min-width: 1024px) {
+
+    .menu-btn {
+        display: none;
+    }
+
+    .nav-menu {
+
+        position: static;
+
+        inset: auto;
+
+        padding: 0;
+
+        flex-direction: row;
+        align-items: center;
+
+        gap: 16px;
+
+        background: transparent;
+
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+
+        transform: none;
+
+    }
+
+    .nav-links {
+
+        flex-direction: row;
+        align-items: center;
+
+        gap: 32px;
+
+        height: 60px;
+
+        padding: 0 32px;
+
+        border-radius: 20px;
+    }
+
+    .nav-links a {
+
+        font-size: 20px;
+
+    }
+
+}

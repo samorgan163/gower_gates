@@ -1,0 +1,51 @@
+body {
+    font-family: 'Afacad', serif;
+}
+
+.heading-lg {
+    font-size: clamp(2.5rem, 5vw, 4rem); /* 40px -> 64px */
+    font-weight: bold;
+    line-height: 1.2;
+    color: var(--color-text-primary);
+}
+
+.heading-md {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.2;
+    color: var(--color-text-primary);
+}
+
+.heading-sm {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.2;
+    color: var(--color-text-primary);
+}
+
+.body-md {
+    font-size: clamp(1.25rem, 2vw, 1.5rem); /* 24px */
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 4%;
+    color: var(--color-text-secondary);
+}
+
+@media (min-width: 768px) {
+    .heading-md {
+        font-size: 2.5rem; /* 40px */
+    }
+    .heading-sm {
+        font-size: 2rem; /* 28px */
+    }
+}
+@media (min-width: 1024px) {
+    .heading-md {
+        font-size: 2.75rem;
+    }
+}
+@media (min-width: 1440px) {
+    .heading-md {
+        font-size: 3rem; /* 48px */
+    }
+}

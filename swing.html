@@ -6,14 +6,18 @@
         <title>Gower Gate Automation</title>
 
         <!--Styles-->
+        <link rel="stylesheet" href="./css/base/reset.css" />
+        <link rel="stylesheet" href="./css/base/constants.css" />
+        <link rel="stylesheet" href="./css/base/typography.css" />
+
         <link rel="stylesheet" href="./css/main.css" />
-        <link rel="stylesheet" href="./css/typography.css" />
-        <link rel="stylesheet" href="./css/products.css" />
-        <link rel="stylesheet" href="./css/button.css" />
-        <link rel="stylesheet" href="./css/services.css" />
-        <link rel="stylesheet" href="./css/navbar.css" />
-        <link rel="stylesheet" href="./css/safety.css" />
-        <link rel="stylesheet" href="./css/product-page.css" />
+
+        <link rel="stylesheet" href="./css/components/button.css" />
+        <link rel="stylesheet" href="./css/layout/layout.css" />
+        <link rel="stylesheet" href="./css/layout/navbar.css" />
+
+        <link rel="stylesheet" href="./css/pages/home/products.css" />
+        <link rel="stylesheet" href="./css/pages/product/product-page.css" />
 
         <!--Fonts-->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,51 +28,154 @@
 
         <!--Scripts-->
         <script src="./js/menu-toggle.js" defer></script>
+        <script src="./js/product-carousel.js" defer></script>
     </head>
     <body>
-        <nav>
-            <div class="nav-btn"></div>
-            <button class="nav-btn" id="menu-btn">
+        <nav class="nav">
+            <a href="./index.html" class="nav-logo">
                 <svg
-                    class="nav-menu-icon"
+                    viewBox="0 0 124 62"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M42.0001 62L58 62V20L42 18L42.0001 62Z" />
+                    <path d="M82 62H66V20L82 18L82 62Z" />
+                    <path d="M18 62H34V16L18 10V62Z" />
+                    <path d="M106 62H90V16L106 10V62Z" />
+                    <path
+                        d="M10 5.99999V62H0C0.166667 47 0 14.8091 0 5.99999C0 -2 10 -1.99999 10 5.99999Z" />
+                    <path
+                        d="M124 5.99999V62H114C114.167 47 114 14.8091 114 5.99999C114 -1.99999 124 -1.99999 124 5.99999Z" />
+                </svg>
+            </a>
+            <button
+                class="menu-btn"
+                id="menu-btn"
+                aria-label="Open navigation"
+                aria-expanded="false"
+                aria-controls="nav-menu">
+                <svg
+                    class="menu-icon"
                     width="32"
                     height="20"
                     viewBox="0 0 32 20"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg">
-                    <path d="M13.7143 0H32V4H12L13.7143 0Z" fill="#1B0405" />
-                    <path d="M10 8H32V12H6.85714L10 8Z" fill="#1B0405" />
-                    <path d="M3.42857 16H32V20H0L3.42857 16Z" fill="#1B0405" />
+                    <path
+                        d="M13.7143 0H32V4H12L13.7143 0Z"
+                        fill="currentColor" />
+                    <path d="M10 8H32V12H6.85714L10 8Z" fill="currentColor" />
+                    <path
+                        d="M3.42857 16H32V20H0L3.42857 16Z"
+                        fill="currentColor" />
                 </svg>
             </button>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-links">
+                    <li>
+                        <a href="./index.html"> Home </a>
+                    </li>
+                    <li>
+                        <a href="./index.html#services"> Services </a>
+                    </li>
+                    <li>
+                        <a href="./index.html#safety"> Safety </a>
+                    </li>
+                    <li>
+                        <a href="./slide.html"> Sliding Gates </a>
+                    </li>
+                    <li>
+                        <a href="./swing.html" class="active"> Swing Gates </a>
+                    </li>
+                </ul>
+                <a href="./quote.html" class="btn-primary"> Get A Quote </a>
+            </div>
         </nav>
-        <div class="mobile-menu" id="mobile-menu">
-            <ul class="nav-links">
-                <li><a href="./index.html">Home</a></li>
-                <li><a>Services</a></li>
-                <li><a>Safety</a></li>
-                <li><a href="./slide.html">Sliding Gates</a></li>
-                <li><a href="./swing.html">Swing Gates</a></li>
-            </ul>
-        </div>
-        <section class="side-padding product-container">
-            <h1>Swing Gates</h1>
-            <img src="./images/swing-gate.jpg" alt="" />
+        <section class="product-container side-padding section">
+            <h1 class="section-title heading-lg">Swing Driveway Gates.</h1>
+            <div class="product-image">
+                <img src="./images/swing-gate.jpg" alt="" />
+            </div>
             <div class="product-info">
-                <p>
-                    Talk here about swing gates and some other stuff about swing
-                    age. Talk more here about swing gates and blah blah.
+                <p class="body-md">
+                    Talk here about sliding gates and some other stuff about
+                    slide age. Talk more here about sliding gates and blah blah.
                 </p>
             </div>
-            <h2>Recent Installs</h2>
-            <div class="product-gallery">
-                <img src="./images/swing-gate.jpg" alt="" />
-                <img src="./images/swing-gate.jpg" alt="" />
-                <img src="./images/swing-gate.jpg" alt="" />
-                <img src="./images/swing-gate.jpg" alt="" />
-                <img src="./images/swing-gate.jpg" alt="" />
-                <img src="./images/swing-gate.jpg" alt="" />
-            </div>
         </section>
+        <section class="section side-padding">
+            <h2 class="heading-md section-sub-title">Recent Installs</h2>
+            <div class="product-gallery">
+                <!--
+                <img data-index="0" src="./images/swing-gate.jpg" alt="" />
+                <img data-index="1" src="./images/swing-gate.jpg" alt="" />
+                <img data-index="2" src="./images/swing-gate.jpg" alt="" />
+                <img data-index="3" src="./images/swing-gate.jpg" alt="" />
+                <img data-index="4" src="./images/swing-gate.jpg" alt="" />
+                <img data-index="5" src="./images/swing-gate.jpg" alt="" />
+            --></div>
+        </section>
+        <div class="product-carousel hidden">
+            <button
+                class="product-carousel-btn"
+                id="product-carousel-btn-right">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M9 18L15 12L9 6"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+            <button class="product-carousel-btn" id="product-carousel-btn-left">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M15 18L9 12L15 6"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+            <button
+                class="product-carousel-btn"
+                id="product-carousel-btn-close">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M6 6L18 18M18 6L6 18"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round" />
+                </svg>
+            </button>
+            <!--
+            <div class="slide">
+                <img data-index="0" src="./images/swing-gate.jpg" alt="" />
+            </div>
+            <div class="slide">
+                <img data-index="1" src="./images/swing-gate.jpg" alt="" />
+            </div>
+            <div class="slide">
+                <img data-index="2" src="./images/swing-gate.jpg" alt="" />
+            </div>
+            <div class="slide">
+                <img data-index="3" src="./images/swing-gate.jpg" alt="" />
+            </div>
+            <div class="slide">
+                <img data-index="4" src="./images/swing-gate.jpg" alt="" />
+            </div>
+            <div class="slide">
+                <img data-index="5" src="./images/swing-gate.jpg" alt="" />
+            </div>
+        --></div>
     </body>
 </html>

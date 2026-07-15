@@ -1,0 +1,144 @@
+#safety {
+    scroll-margin-top: var(--nav-height);
+}
+
+.slider {
+    --slider-padding: 24px;
+    --slider-gap: 24px;
+
+    width: 100%;
+    display: flex;
+    gap: var(--slider-gap);
+    overflow-x: auto;
+    
+    scroll-snap-type: x mandatory;
+
+    padding-left: var(--slider-padding);
+    padding-right: var(--slider-padding);
+
+    scroll-padding-left: var(--slider-padding);
+
+    /* remove scroll bar */
+    scrollbar-width: none;
+
+    margin-bottom: 96px;
+}
+
+/* remove scroll bar */
+.slider::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    
+    width: calc(100vw - var(--slider-padding) * 2 - var(--slider-gap));
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-bottom: 24px;
+}
+
+.card h2 {
+    margin-bottom: 8px;
+}
+
+.card p {
+    text-align: left;
+}
+
+.slider-controls {
+    display: flex;
+    gap: 16px;
+
+    align-self: flex-end;
+    margin-right: 32px;
+}
+
+.slider-btn {
+    width: 64px;
+    height: 64px;
+    background-color: var(--color-brand-primary);
+
+    border: none;
+    border-radius: 50%;
+
+    cursor: pointer;
+}
+
+.slider-btn:hover {
+    background-color: var(--color-brand-primary-hover);
+}
+
+.slider-btn:disabled {
+    background-color: var(--color-brand-primary-disabled);
+}
+
+@media screen and (min-width: 768px) {
+    .slider {
+        --slider-padding: 72px;
+        --slider-gap: 32px;
+    }
+
+    .card {
+        width: calc((100vw - (var(--slider-padding) * 2) - var(--slider-gap)) / 2);
+    }
+
+    .slider-controls {
+        margin-right: 72px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .slider {
+        --slider-padding: 96px;
+        --slider-gap: 32px;
+    }
+
+    .card {
+        width: calc((100vw - (var(--slider-padding) * 2) - (var(--slider-gap) * 2)) / 3);
+    }
+
+    .slider-controls {
+        margin-right: 128px;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .slider {
+        --slider-padding: 200px;
+        --slider-gap: 120px;
+    }
+
+    .slider-controls {
+        margin-right: 200px;
+    }
+}
+
+/* information reveal animation */
+.card-details {
+    opacity: 0;
+}
+
+.card-details.animate {
+    animation: text-reveal 0.6s ease-out 0s 1 normal forwards;
+}
+
+@keyframes text-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,16 @@
+:root {
+    --color-brand-primary: #12304A;
+    --color-brand-primary-hover: #1A4668;
+    --color-brand-primary-pressed: #0D2438;
+    --color-brand-primary-disabled: #8A9AA8;
+    --color-brand-primary-focus: #2E7DB5;
+
+    --color-background-primary: #F8F0E3;
+    --color-background-secondary: #EDE4D8;
+    --color-background-tertiary: #DDD1C3; 
+
+    --color-text-primary: #1B0405;
+    --color-text-secondary: #483331;
+
+    --padding-side: 16px;
+}

@@ -1,0 +1,28 @@
+.recent-installs-gallery {
+    display: flex;
+    overflow-x: auto;
+    gap: var(--padding-side);
+    scroll-snap-type: x mandatory;
+}
+
+.recent-installs-gallery img {
+    flex: 0 0 calc((100% - 3 * var(--padding-side)) / 4);
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    object-position: center;
+    scroll-snap-align: start;
+    border-radius: 20px;
+}
+
+@media (max-width: 992px) {
+    .recent-installs-gallery img {
+        flex-basis: calc((100% - var(--padding-side)) / 2);
+    }
+  }
+
+@media (max-width: 576px) {
+    .recent-installs-gallery img {
+        flex-basis: 100%;
+    }
+}

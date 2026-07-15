@@ -1,0 +1,162 @@
+.services {
+    scroll-margin-top: var(--nav-height);
+}
+
+.service-cards {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 16px;
+}
+
+.service-card {
+    background: var(--color-background-secondary);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    border-radius: 30px;
+    padding: 80px 24px;
+
+    transition: background 0.3s ease;
+}
+
+.service-card p {
+    text-align: center;
+}
+
+.service-icon {
+    width: 56px;
+    height: 56px;
+}
+
+.service-icon svg {
+    fill: #776661;
+    height: 100%;
+    width: auto;
+}
+
+/* Animations */
+@media (hover: hover) {
+    .service-card:hover {
+        background: var(--color-background-tertiary);
+    }
+}
+
+/* design card */
+#design-card.animate .service-icon svg {
+    animation: spinY 1000ms ease-in-out 1 normal forwards;
+    fill: rgb(35, 35, 35);
+}
+
+@media (hover: hover) {
+    #design-card:hover .service-icon svg {
+        animation: spinY 1000ms ease-in-out 1 normal forwards;
+        fill: rgb(35, 35, 35);
+    }
+}
+
+@keyframes spinY {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(369deg);
+    }
+}
+
+/* install card */
+#install-card.animate .service-icon svg {
+    animation: install 1000ms ease 1 normal forwards;
+    fill: rgb(35, 35, 35);
+}
+
+@media (hover: hover) {
+    #install-card:hover .service-icon svg {
+        animation: install 1000ms ease 1 normal forwards;
+        fill: rgb(35, 35, 35);
+    }
+}
+
+@keyframes install {
+    0% {
+        transform: rotate(0deg);
+    } 
+    20% {
+        transform: rotate(14deg);
+    }
+    40% {
+        transform: rotate(-4deg);
+    }
+    70% {
+        transform: rotate(16deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/* service card */
+#service-card.animate .service-icon svg {
+    animation: spinZ 1000ms ease-out 1 normal forwards;
+    fill: rgb(35, 35, 35);
+}
+
+@media (hover: hover) {
+    #service-card:hover .service-icon svg {
+        animation: spinZ 1000ms ease-out 1 normal forwards;
+        fill: rgb(35, 35, 35);
+    }
+}
+
+@keyframes spinZ {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* repair card */
+#repair-card.animate .service-icon svg {
+    animation: fix 1000ms ease 1 normal forwards;
+    fill: rgb(35, 35, 35);
+}
+
+@media (hover: hover) {
+    #repair-card:hover .service-icon svg {
+        animation: fix 1000ms ease 1 normal forwards;
+        fill: rgb(35, 35, 35);
+    }
+}
+
+@keyframes fix {
+    0% {
+        transform: rotate(0deg);
+    } 
+    50% {
+        transform: rotate(-15deg);
+    }
+    60% {
+        transform: rotate(4deg);
+    }
+    100% {
+        transform: rotate(-14deg);
+    }
+}
+
+@media (min-width: 768px) {
+	.service-cards {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media (min-width: 1440px) {
+	.service-cards {
+		grid-template-columns: repeat(4, 1fr);
+	}
+    .service-card {
+        padding: 104px 24px;
+    }
+}
